@@ -16,6 +16,6 @@
     "concurrently": "^5.2.0"
   },
   "engines": {
-    "yarn": "1.x"
+    "node": "12.x"
   }
 }
