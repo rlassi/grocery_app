@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn start\"",
-    "start": "concurrently \"cd server && yarn start\" \"cd client && yarn start\"",
+    "start": "node server/index.js",
     "db": "cd && /Users/Ryan/mongodb/bin/mongod --dbpath=/Users/Ryan/mongodb-data/"
   },
   "author": "",
