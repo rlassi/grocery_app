@@ -1,21 +1,25 @@
 {
-  "name": "food-order-app",
+  "name": "grocery-inventory-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engine": {
+    "node": "12.13.1",
+    "npm": "6.13.6"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn start\"",
-    "start": "node server/src/index.js",
+    "start": "cd server && npm run start",
+    "install-client": "cd client && npm install && npm run build",
+    "install-server": " cd server && npm install && npm run preinstall",
+    "heroku-postbuild": "npm run install-client && npm run install-server",
+    "installation": "npm run heroku-postbuild",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && yarn start\"",
     "db": "cd && /Users/Ryan/mongodb/bin/mongod --dbpath=/Users/Ryan/mongodb-data/"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^5.2.0"
   },
-  "engines": {
-    "node": "12.18.3"
-  }
+  "dependencies": {}
 }
