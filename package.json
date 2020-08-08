@@ -11,7 +11,7 @@
     "start": "cd server && npm run start",
     "install-client": "cd client && npm install && npm run build",
     "install-server": " cd server && npm install && npm run preinstall",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run install-server",
+    "heroku-postbuild": "npm run install-client && npm run install-server",
     "installation": "npm run heroku-postbuild",
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && yarn start\"",
     "db": "cd && /Users/Ryan/mongodb/bin/mongod --dbpath=/Users/Ryan/mongodb-data/"
