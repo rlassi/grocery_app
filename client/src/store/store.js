@@ -9,6 +9,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadState, saveState } from './localStorage';
 import throttle from 'lodash/throttle';
 
+let middleware = [thunkMiddleware, logger];
+
+if (process.env.NODE_ENV === 'production') {
+  middleware = [thunkMiddleware];
+}
+
 const persistedState = loadState();
 
 const rootReducer = combineReducers({
@@ -22,10 +28,7 @@ const store = createStore(
     rootReducer,
     persistedState,
     composeWithDevTools(
-        applyMiddleware(
-            thunkMiddleware, 
-            logger
-        )
+        applyMiddleware(...middleware)
     )
 );
 
