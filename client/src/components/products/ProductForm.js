@@ -62,15 +62,7 @@ const ProductForm = ({
                     value={description} 
                     onChange={(e) => setDescription(e.target.value)}
                 />
-                <label htmlFor="categories">
-                    Category
-                    <div 
-                        className="material-icons"
-                        style={{fontSize: '18px', marginLeft: '.5rem'}}
-                    >
-                        edit
-                    </div>
-                </label>
+                <label htmlFor="categories">Category</label>
                 {error && !product.category && errorMessage}
                 <UI.Select 
                     width="10rem" 

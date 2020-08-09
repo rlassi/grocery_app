@@ -17,6 +17,9 @@ const ProductCard = ({ p, openSideDrawer }) => {
             <Styled.ProductName>
                 {p.name}
             </Styled.ProductName>
+            <Styled.ProductName>
+                Category: {p.category.name}
+            </Styled.ProductName>
             <Styled.ProductStock>
                 Stock: {p.stock}
             </Styled.ProductStock>
