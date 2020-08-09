@@ -17,7 +17,7 @@ const ProductCard = styled.div`
     justify-content: space-between;
     min-width: 250px;
     margin: .25rem;
-    padding: 0;
+    padding: .25rem;
 
     &:hover {
         box-shadow: 2px 2px 4px #DCDCDC;
@@ -32,6 +32,10 @@ const ProductCard = styled.div`
         max-width: 100%;
     }
 
+    & h4 {
+        margin-bottom: .25rem;
+    }
+
     @media only screen and (max-width: 599px){
         height: 400px;
         max-width: 400px;
@@ -44,7 +48,7 @@ const ProductCard = styled.div`
 `;
 
 const ProductPrice = styled.h4`
-    padding: .25rem;
+    padding: .25rem .25rem 0;
 `;
 
 const ProductName = styled.h4`
