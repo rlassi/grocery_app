@@ -97,7 +97,7 @@ const InputMd = styled.input`
     border-bottom-right-radius: ${props => props.br && props.br};
     border-bottom-left-radius: ${props => props.bl && props.bl};
     font-size: 1rem;
-    height: ${props => props.height ? props.height : '3rem'};
+    height: ${props => props.height ? props.height : '2rem'};
     margin: ${props => props.margin && props.margin};
     padding: 0 0 0 .5rem;
     width: 100%;
@@ -115,6 +115,7 @@ const InputXS = styled(InputMd)`
 
 const InputSignIn = styled(InputMd)`
     font-size: .85rem;
+    height: 3rem;
     max-width: 100%;
 `;
 
