@@ -72,6 +72,7 @@ const AppSearchBar = ({
                 value={queryName}
                 onChange={(e) => setQueryName(e.target.value)}
                 maxWidth="100%"
+                height="2rem"
                 tl="0"
                 bl="0"
                 type="text"

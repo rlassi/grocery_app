@@ -11,7 +11,8 @@ const Header = styled.div`
 const Logo = styled.div`
     flex-grow: 1;
     min-width: 0;
-    & h2 {
+    font-family: 'Indie Flower', cursive;
+    & h1 {
         color: white;
         margin: 0;
     }

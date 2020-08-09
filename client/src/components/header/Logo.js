@@ -4,7 +4,7 @@ import Styled from './styles';
 const Logo = () => {
     return (
         <Styled.Logo>
-            <h2>People's Market</h2>
+            <h1>People's Market</h1>
         </Styled.Logo>
     );
 };
