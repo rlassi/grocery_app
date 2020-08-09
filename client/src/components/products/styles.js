@@ -57,7 +57,7 @@ const ProductStock = styled.h4`
 
 const EditProduct = styled.div`
     display: ${props => props.show ? 'block' : 'none'};
-    padding-top: 3rem;
+    padding-top: 1.5rem;
     padding-left: 2rem;
 
     & ul { /** item details */
@@ -73,7 +73,7 @@ const EditProduct = styled.div`
 const ProductFormContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 3rem 2rem;
+    padding: 1.5rem 2rem;
 `;
 
 export default {
