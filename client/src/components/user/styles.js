@@ -14,7 +14,7 @@ const Card = styled.div`
         min-height: 100vh;
         min-width: 100vw;
         align-items: center;
-        padding: 3rem;
+        padding: 5rem 3rem 3rem;
     }
 `;
 

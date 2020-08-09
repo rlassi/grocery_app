@@ -72,7 +72,7 @@ const CreateUser = ({ createUser, openModal, closeModal }) => {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                     { error && <div style={errorStyles}>Please make sure password is typed correctly!</div>}
-                    <UI.ButtonPrimary alignSelf="flex-start">
+                    <UI.ButtonPrimary margin="2rem 0 0 !important" alignSelf="flex-start">
                         Create User
                     </UI.ButtonPrimary>
                 </UI.Form>

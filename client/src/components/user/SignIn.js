@@ -45,7 +45,7 @@ const Login = ({ closeModal, openModal, loginUser, error }) => {
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <UI.ButtonPrimary alignSelf="flex-start">
+                    <UI.ButtonPrimary margin="2rem 0 0 !important" alignSelf="flex-start">
                         Sign In
                     </UI.ButtonPrimary>
                 </UI.Form>
