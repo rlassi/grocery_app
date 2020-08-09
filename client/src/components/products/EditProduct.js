@@ -28,7 +28,7 @@ const EditProduct = ({
     return (
         <React.Fragment>
             <Styled.EditProduct show={!edit}>
-                <CloseButton onClick={closeSideDrawer} />
+                <CloseButton onClick={closeSideDrawer} top="2rem"/>
                 {!edit && p && (
                     <React.Fragment>
                         <h1>{p.name}</h1>

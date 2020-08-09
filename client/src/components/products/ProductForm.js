@@ -46,7 +46,7 @@ const ProductForm = ({
 
     return (
         <Styled.ProductFormContainer>
-            <CloseButton onClick={closeSideDrawer} />
+            <CloseButton onClick={closeSideDrawer} top="2rem"/>
             <h1>{p ? 'Edit Product' : 'Add Product'}</h1>
             <UI.Form onSubmit={handleSubmit} margin="1rem 0">
                 <label>Product Name</label>

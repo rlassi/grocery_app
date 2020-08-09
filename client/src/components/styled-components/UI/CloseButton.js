@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CloseButton = ({ onClick, bgColor }) => {
+const CloseButton = ({ onClick, bgColor, top }) => {
     return (
-        <StyledCloseButton onClick={onClick}>
+        <StyledCloseButton top={top} onClick={onClick}>
             <CloseButtonContent>
                 <CloseX bgColor={bgColor} />
                 <CloseX bgColor={bgColor} />
@@ -20,6 +20,9 @@ const StyledCloseButton = styled.div`
     right: 3rem;
     &:hover {
         cursor: pointer;
+    }
+    @media only screen and (max-width: 599px){
+        top: ${props => props.top ? props.top : '5.5rem'};
     }
 `;
 

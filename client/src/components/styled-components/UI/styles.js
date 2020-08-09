@@ -65,6 +65,10 @@ const ButtonBadge = styled(ButtonPrimary)`
     margin: 0;
     padding: 1px 1px 0 0;
 
+    @media only screen and (max-width: 599px){
+        padding: 0 0 5px 0;
+    }
+
     ${({ diameter }) => diameter && css`
         border-radius: ${diameter / 2}px;
         height: ${diameter}px;
@@ -93,7 +97,7 @@ const InputMd = styled.input`
     border-bottom-right-radius: ${props => props.br && props.br};
     border-bottom-left-radius: ${props => props.bl && props.bl};
     font-size: 1rem;
-    height: 2rem;
+    height: ${props => props.height ? props.height : '3rem'};
     margin: ${props => props.margin && props.margin};
     padding: 0 0 0 .5rem;
     width: 100%;
@@ -110,7 +114,7 @@ const InputXS = styled(InputMd)`
 `;
 
 const InputSignIn = styled(InputMd)`
-    font-size: .75rem;
+    font-size: .85rem;
     max-width: 100%;
 `;
 
