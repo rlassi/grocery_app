@@ -35,7 +35,8 @@ const AppSearchBar = ({
 
         if (history.location.pathname !== '/products' && queryName.length) {
             history.push('/products');
-        }
+            getProducts({ name: debouncedName, category: selectState});
+        } 
     }, [debouncedName, selectState, queryName.length, history, getProducts]);
 
     useEffect(() => {
