@@ -12,5 +12,5 @@ export default (ref, show, close) => {
         return () => {
             window.removeEventListener('click', handler)
         }
-    }, [ref, show]);
+    }, [ref, show, close]);
 }

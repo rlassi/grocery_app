@@ -140,6 +140,21 @@ const Form = styled.form`
     }
 `;
 
+// Images
+
+const Hero = styled.div`
+    align-items: center;
+    background-image: url('/grocerybag_edit.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    height: 65vh;
+    justify-content: center;
+    width: 100%;
+`
+
 export default {
     Select,
     ButtonPrimary,
@@ -147,6 +162,7 @@ export default {
     ButtonWarning,
     ButtonBadge,
     ButtonNavLink,
+    Hero,
     InputMd,
     InputSm,
     InputXS,

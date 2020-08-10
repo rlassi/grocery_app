@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchLogout } from '../../../store/actions/userActions';
 import { openModal, closeModal, openSideDrawer } from '../../../store/actions/overlaysActions';
@@ -18,6 +19,11 @@ const AppNavLinks = ({
     };
     return (
         <Styled.NavLinks>
+            <Styled.NavLink>
+                <Link to="/products">
+                    Products
+                </Link>
+            </Styled.NavLink>
             { isAuthenticated && 
                 <UI.ButtonNavLink
                     onClick={() => openSideDrawer({

@@ -4,10 +4,10 @@ import {
     Switch
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PrivateRoute from '../router/PrivateRoute';
+// import PrivateRoute from '../router/PrivateRoute';
 import PublicRoute from '../router/PublicRoute';
+import Welcome from '../components/Welcome';
 import ProductsContainer from '../components/products/ProductsContainer';
-import AccountContainer from '../components/user/account/AccountContainer';
 import Header from '../components/header/index';
 import MobileSearchOverlay from '../components/overlays/MobileSearchOverlay';
 import { closeMobileSearch } from '../store/actions/overlaysActions';
@@ -21,8 +21,8 @@ const AppRouter = ({ children, show, closeMobileSearch }) => {
                 close={closeMobileSearch}
             />
             <Switch>
-                <PublicRoute path='/' component={ProductsContainer} />
-                <PrivateRoute path='/account' component={AccountContainer} />
+                <PublicRoute path='/' component={Welcome} exact />
+                <PublicRoute path='/products' component={ProductsContainer} />
             </Switch>
             {children}
         </Router>

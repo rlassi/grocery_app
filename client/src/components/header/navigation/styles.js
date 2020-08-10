@@ -3,6 +3,9 @@ import styled from 'styled-components';
 const NavLink = styled.li`
     margin: ${props => props.margin ? props.margin : '.5rem'};
 
+    &:hover {
+        background-color: ${props => props.theme.colors.secondaryMain};
+    }
     /** navlink colors **/
     & > a {
         padding: .75rem;
@@ -11,8 +14,13 @@ const NavLink = styled.li`
     & > a {
         color: white;
         background-color: ${({mainNav}) => mainNav && 'transparent'};
+        border: 1px solid white;
         border-radius: 3px;
         font-size: 1rem;
+
+        :hover {
+            background-color: ${props => props.theme.colors.secondaryMain};
+        }
     }
 
     & > a:hover {

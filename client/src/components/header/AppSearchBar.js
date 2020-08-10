@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { 
     fetchProducts,
+    fetchCategories,
     fetchAddCategory, 
     updateQueryName, 
     updateQueryCategory 
@@ -14,17 +16,27 @@ const AppSearchBar = ({
     categories, 
     addCategory, 
     getProducts,
+    getCategories
 }) => {
+    const history = useHistory();
     const inputRef = useRef();
     const [selectState, setSelectState] = useState('');
     const [show, setShow] = useState(false);
     const [queryName, setQueryName] = useState('');
     const [category, setCategory] = useState('');
     const debouncedName = useDebounce(queryName, 500);
-
+    
+    useEffect(() => {
+        getCategories();
+    }, [getCategories])
+    
     useEffect(() => {
         getProducts({ name: debouncedName, category: selectState});
-    }, [debouncedName, selectState]);
+
+        if (history.location.pathname !== '/products' && queryName.length) {
+            history.push('/products');
+        }
+    }, [debouncedName, selectState, queryName.length, history, getProducts]);
 
     useEffect(() => {
         if(show){
@@ -93,6 +105,7 @@ const mapState = state => ({
     categories: state.products.categories,
 })
 const mapDispatch = dispatch => ({
+    getCategories: () => dispatch(fetchCategories()),
     getProducts: (obj) => dispatch(fetchProducts(obj)),
     addCategory: (category) => dispatch(fetchAddCategory(category)),
     updateQueryCategory: (category) => dispatch(updateQueryCategory(category)),

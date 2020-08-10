@@ -23,7 +23,10 @@ const ModalContainer = ({ modal }) => {
                     deleteAccount={modalProps.deleteAccount}
                     closeSideDrawer={modalProps.closeSideDrawer}
                     closeModal={modalProps.closeModal}
-                />
+                />;
+            break;
+        default: 
+            content = '';
     }
 
     const transitions = useTransition(modal.show, null, {

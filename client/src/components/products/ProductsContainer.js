@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { fetchCategories } from '../../store/actions/productActions';
 import { openSideDrawer, openModal } from '../../store/actions/overlaysActions';
 import ProductCard from './ProductCard';
 import UI from '../styled-components/UI/styles';
@@ -12,11 +11,7 @@ const ProductsContainer = ({
     openSideDrawer,
     isAuthenticated,
     openModal,
-    getCategories,
 }) => {
-    useEffect(() => {
-        getCategories();
-    }, []);
 
     return (
         <Grid.Container 
@@ -55,7 +50,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    getCategories: () => dispatch(fetchCategories()),
     openSideDrawer: (obj) => dispatch(openSideDrawer(obj)),
     openModal: (obj) => dispatch(openModal(obj))
 })
