@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchLogout } from '../../../../store/actions/userActions';
 import { openModal, openSideDrawer } from '../../../../store/actions/overlaysActions';
@@ -15,6 +15,7 @@ const NavSideDrawer = ({
     logout,
     openModal
 }) => {
+    const history = useHistory();
     const handleLogin = () => {
         setShow(false);
         openModal({type: 'SIGN_IN', show: true})
@@ -26,13 +27,17 @@ const NavSideDrawer = ({
             show: true
         }); 
     }
+    const handleProductsClick = () => {
+        setShow(false);
+        history.push('/products');
+    }
     return (
         <Grid.Flex direction="column" height="100%" padding="3rem 2rem">
             <h2>Welcome{userName ? `, ${userName}!` : '!'}</h2>
             <Styled.MenuList>
                 <Styled.MenuListItem>
-                    <UI.ButtonNavLink>
-                        <Link to="/products">Products</Link>
+                    <UI.ButtonNavLink onClick={handleProductsClick}>
+                        Products
                     </UI.ButtonNavLink>
                 </Styled.MenuListItem>
                 {isAuthenticated &&

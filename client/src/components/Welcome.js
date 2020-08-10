@@ -12,7 +12,7 @@ const Welcome = () => {
         <Grid.Container
             fullWidth 
             noGutters
-            padding="3rem 2rem"
+            padding="3rem 1.5rem"
         >
             <div style={{ margin: '0 auto', maxWidth: "45rem"}}>
                 <h1>Welcome to People's Market!</h1>
