@@ -17,7 +17,7 @@ const ProductCard = styled.div`
     justify-content: space-between;
     min-width: 250px;
     margin: .25rem;
-    padding: .25rem;
+    padding: 0;
 
     &:hover {
         box-shadow: 2px 2px 4px #DCDCDC;
