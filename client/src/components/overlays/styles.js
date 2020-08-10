@@ -9,10 +9,6 @@ const SideDrawerContainer = styled.div`
 const ModalContent = styled.div`
     background: white;
     height: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
     @media only screen and (max-width: 599px) {
         display: flex;

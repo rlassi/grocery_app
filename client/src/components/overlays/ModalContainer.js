@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { useTransition, animated } from 'react-spring';
 
 import SignIn from '../user/SignIn';
 import CreateUser from '../user/CreateUser';
@@ -25,11 +26,19 @@ const ModalContainer = ({ modal }) => {
                 />
     }
 
-    const portal = (
-        <Styled.ModalContent>
-            {content}
-        </Styled.ModalContent>
-    )
+    const transitions = useTransition(modal.show, null, {
+        from: { position: 'fixed', opacity: '0', top: '60%', left: '50%', transform: `translate(-50%, -50%)` },
+        enter: { opacity: '1', top: '50%' },
+        leave: { top: '60%', opacity: '0' },
+    });
+    const portal = transitions.map(({ item, key, props }) => {
+        return item && (
+            <animated.div key={key} style={props}>
+                <Styled.ModalContent>
+                    {content}
+                </Styled.ModalContent>
+            </animated.div>
+    )});
 
     return ReactDOM.createPortal(portal, document.getElementById('login-modal'));
 };
