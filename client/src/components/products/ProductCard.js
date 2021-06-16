@@ -1,6 +1,7 @@
 import React from 'react';
 import Styled from './styles';
 
+/** ProductCard displays metadata about a given product */
 const ProductCard = ({ p, openSideDrawer }) => {
     return (
         <Styled.ProductCard 
